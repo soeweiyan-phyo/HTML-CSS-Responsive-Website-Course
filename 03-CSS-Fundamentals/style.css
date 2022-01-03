@@ -1,36 +1,57 @@
+/* Combine selectors for similar declarations. */
+/* This is a list selector. */
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+}
+
+/* This is a descendent selector. */
+/* <p> inside of <footer>. */
+footer p {
+  font-size: 16px;
+}
+
+/* This can be issue since we are following the same HTML structure since
+ * there can be similar structure through the HTML document. For example,
+ * a <p> inside of <header>. However, the issue can be solved by further 
+ * nesting the elements but that would make our code fixed and hard to make
+ * any changes to it.
+ */
+article header p {
+  font-style: italic;
+}
+
 h1 {
   color: blue;
   font-size: 26px;
-  font-family: sans-serif;
   text-transform: uppercase;
   font-style: italic;
 }
 
 h2 {
   font-size: 40px;
-  font-family: sans-serif;
 }
 
 h3 {
   font-size: 30px;
-  font-family: sans-serif;
 }
 
 h4 {
   font-size: 20px;
-  font-family: sans-serif;
   text-transform: uppercase;
   text-align: center;
 }
 
 p {
   font-size: 22px;
-  font-family: sans-serif;
   line-height: 1.5;
 }
 
 /* When styling a list, we style on the <li> element instead of <ul> or <ol> elements. */
 li {
   font-size: 20px;
-  font-family: sans-serif;
 }
