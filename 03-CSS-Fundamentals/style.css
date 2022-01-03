@@ -78,3 +78,26 @@ aside {
 .main-header {
   background-color: #f7f7f7;
 }
+
+/* Pseudo-classes */
+/* Selecting all first child <li> elements. */
+li:first-child {
+  font-weight: bold;
+}
+
+/* Selecting all last child <li> elements */
+li:last-child {
+  font-style: italic;
+}
+
+/* Selecting all nth child <li> elements */
+li:nth-child(even) {
+  color: red;
+}
+
+/* This pseudo class will only work if <p> is actually the last element 
+ * inside of <article>.
+ */
+article p:last-child {
+  color: red;
+}
