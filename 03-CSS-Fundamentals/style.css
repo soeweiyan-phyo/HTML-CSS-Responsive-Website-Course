@@ -7,26 +7,16 @@ h4,
 p,
 li {
   font-family: sans-serif;
+  color: #444;
 }
 
-/* This is a descendent selector. */
-/* <p> inside of <footer>. */
-footer p {
-  font-size: 16px;
-}
-
-/* This can be issue since we are following the same HTML structure since
- * there can be similar structure through the HTML document. For example,
- * a <p> inside of <header>. However, the issue can be solved by further 
- * nesting the elements but that would make our code fixed and hard to make
- * any changes to it.
- */
-article header p {
-  font-style: italic;
+h1,
+h2,
+h3 {
+  color: #1098ad;
 }
 
 h1 {
-  color: blue;
   font-size: 26px;
   text-transform: uppercase;
   font-style: italic;
@@ -54,4 +44,37 @@ p {
 /* When styling a list, we style on the <li> element instead of <ul> or <ol> elements. */
 li {
   font-size: 20px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  /* Shorthand property: Width Style Color */
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+}
+
+/* Using ID selectors. */
+#author {
+  font-style: italic;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+/* We can only use an ID only once for one element. However,
+* if we use a CLASS, we can use it on many elements. 
+*/
+/* Using CLASS selectors. */
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style: none;
+}
+
+.main-header {
+  background-color: #f7f7f7;
 }
