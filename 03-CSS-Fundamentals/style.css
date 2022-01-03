@@ -80,7 +80,7 @@ aside {
 }
 
 /* Pseudo-classes */
-/* Selecting all first child <li> elements. */
+/* Selecting all first child <li> elements */
 li:first-child {
   font-weight: bold;
 }
@@ -91,13 +91,39 @@ li:last-child {
 }
 
 /* Selecting all nth child <li> elements */
-li:nth-child(even) {
+/* li:nth-child(even) {
+  color: red;
+} */
+
+/* This pseudo class will only work if <p> is actually the first element 
+ * inside of <article>.
+ */
+article p:first-child {
   color: red;
 }
 
-/* This pseudo class will only work if <p> is actually the last element 
- * inside of <article>.
- */
-article p:last-child {
-  color: red;
+/* Styling links */
+/* Using links pseudo classes */
+/* Selecting <a> that has href attribute */
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+/* Selecting links that have been visited */
+a:visited {
+  color: #1098ad;
+}
+
+/* When hovering over a link */
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+/* When a link is clicked */
+a:active {
+  background-color: black;
+  font-style: italic;
 }
