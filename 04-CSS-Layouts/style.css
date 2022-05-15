@@ -1,38 +1,31 @@
+/* Global reset */
+/* Setting margins and paddings to of all elements to 0 makes designing very easy */
 * {
-  /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
 }
 
-/* PAGE SECTIONS */
+/* Boxes that contain multiple child elements should be at the top */
 body {
   color: #444;
   font-family: sans-serif;
-
   border-top: 10px solid #1098ad;
   position: relative;
 }
 
+nav {
+  font-size: 18px;
+}
+
 .container {
   width: 800px;
-  /* margin-left: auto;
-  margin-right: auto; */
   margin: 0 auto;
 }
 
 .main-header {
   background-color: #f7f7f7;
-  /* padding: 20px;
-  padding-left: 40px;
-  padding-right: 40px; */
   padding: 20px 40px;
   margin-bottom: 60px;
-  /* height: 80px; */
-}
-
-nav {
-  font-size: 18px;
-  /* text-align: center; */
 }
 
 article {
@@ -41,20 +34,17 @@ article {
 
 .post-header {
   margin-bottom: 40px;
-  /* position: relative; */
 }
 
 aside {
   background-color: #f7f7f7;
+  /* Shorthand property: Width Style Color */
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  /* padding-top: 50px;
-  padding-bottom: 50px; */
   padding: 50px 0;
   width: 500px;
 }
 
-/* SMALLER ELEMENTS */
 h1,
 h2,
 h3 {
@@ -69,7 +59,7 @@ h1 {
 
 h2 {
   font-size: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -96,106 +86,93 @@ ol {
   margin-bottom: 20px;
 }
 
+/* When styling a list, we style on the <li> element instead of <ul> or <ol> elements. */
 li {
   font-size: 20px;
   margin-bottom: 10px;
-  /* display: inline; */
 }
 
 li:last-child {
   margin-bottom: 0;
 }
 
-/* footer p {
-  font-size: 16px;
-} */
-
-/* article header p {
-  font-style: italic;
-} */
-
+/* Using ID selectors. */
 #author {
   font-style: italic;
-  font-size: 18px;
 }
 
 #copyright {
   font-size: 16px;
 }
 
+/* We can only use an ID only once for one element. However,
+* if we use a CLASS, we can use it on many elements. 
+*/
+/* Using CLASS selectors. */
 .related-author {
   font-size: 18px;
   font-weight: bold;
 }
 
-/* ul {
-  list-style: none;
-} */
-
 .related {
   list-style: none;
 }
 
-body {
-  /* background-color: orangered; */
-}
-
-/* .first-li {
-  font-weight: bold;
-} */
-
+/* Pseudo-classes */
+/* Selecting all first child <li> elements */
 li:first-child {
   font-weight: bold;
 }
 
+/* Selecting all last child <li> elements */
 li:last-child {
   font-style: italic;
 }
 
-li:nth-child(even) {
-  /* color: red; */
-}
+/* Selecting all nth child <li> elements */
+/* li:nth-child(even) {
+  color: red;
+} */
 
-/* Misconception: this won't work! */
+/* This pseudo class will only work if <p> is actually the first element 
+ * inside of <article>.
+ */
 article p:first-child {
   color: red;
 }
 
 /* Styling links */
+/* Using links pseudo classes */
+/* Selecting <a> that has href attribute */
 a:link {
   color: #1098ad;
   text-decoration: none;
 }
 
+/* Selecting links that have been visited */
 a:visited {
-  /* color: #777; */
   color: #1098ad;
 }
 
+/* When hovering over a link */
 a:hover {
   color: orangered;
   font-weight: bold;
   text-decoration: underline orangered;
 }
 
+/* When a link is clicked */
 a:active {
   background-color: black;
   font-style: italic;
 }
-/* LVHA */
 
-.post-img {
+.post-image {
   width: 100%;
   height: auto;
 }
 
 nav a:link {
-  /* background-color: orangered;
-  margin: 20px;
-  padding: 20px;
-
-  display: block; */
-
   margin-right: 30px;
   margin-top: 10px;
   display: inline-block;
@@ -205,36 +182,37 @@ nav a:link:last-child {
   margin-right: 0;
 }
 
+/* Absolute positioning */
 button {
   font-size: 22px;
   padding: 20px;
   cursor: pointer;
 
   position: absolute;
-  /* top: 50px;
-  left: 50px; */
   bottom: 50px;
   right: 50px;
 }
 
+/* Pseudo-elements */
 h1::first-letter {
   font-style: normal;
   margin-right: 5px;
 }
 
+/* Adjacent sibling selector */
 h3 + p::first-line {
-  /* color: red; */
+  color: red;
 }
 
 h2 {
-  /* background-color: orange; */
   position: relative;
 }
 
-h2::before {
+/* Add new element after the selected element */
+h2::after {
   content: "TOP";
   background-color: #ffe70e;
-  color: #444;
+  color: #000;
   font-size: 16px;
   font-weight: bold;
   display: inline-block;
@@ -244,24 +222,34 @@ h2::before {
   right: -25px;
 }
 
-/* Resolving conflicts */
-/* #copyright {
-  color: red;
+/* FLOATS */
+.author-img {
+  float: left;
 }
 
-.copyright {
-  color: blue;
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
-.text {
-  color: yellow;
+h1 {
+  float: left;
 }
 
-footer p {
-  color: green !important;
-} */
+nav {
+  float: right;
+}
 
-/* nav a:link,
-nav p {
-  font-size: 18px;
-} */
+/* Clearing floats */
+/* Clear float using an empty div */
+.clear {
+  clear: both;
+}
+
+/* Clear float using a class */
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
