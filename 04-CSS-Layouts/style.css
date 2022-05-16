@@ -176,7 +176,6 @@ a:active {
 
 nav a:link {
   margin-right: 30px;
-  margin-top: 10px;
   display: inline-block;
 }
 
@@ -224,48 +223,42 @@ h2::after {
   right: -25px;
 }
 
-/* FLOATS */
-.author-img {
-  float: left;
+/* FLEXBOX */
+.main-header {
+  display: flex;
+  align-items: center;
+  /* Push each items to one side if only two elements */
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .author {
-  float: left;
-  margin-top: 10px;
-  margin-left: 20px;
+  margin-bottom: 0;
+  margin-left: 15px;
 }
 
-h1 {
-  float: left;
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-nav {
-  float: right;
-}
-
-/* Clearing floats */
-/* Clear float using an empty div */
-.clear {
-  clear: both;
-}
-
-/* Clear float using a class */
-.clearfix::after {
-  clear: both;
-  content: "";
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
   display: block;
+  margin-bottom: 5px;
 }
 
-article {
-  width: 825px;
-  float: left;
-}
-
-aside {
-  width: 300px;
-  float: right;
-}
-
-footer {
-  clear: both;
+.related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
 }
